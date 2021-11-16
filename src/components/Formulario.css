@@ -1,0 +1,27 @@
+label {
+  margin: 10px;
+}
+.formprincipal {
+  width: 50%;
+  margin: 60px;
+}
+
+.buttonsubmit {
+  margin: 20px;
+}
+
+.formtitle {
+  margin-bottom: 40px;
+}
+
+.error {
+  margin: 10px;
+  color: rgb(199, 23, 23);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.exito {
+  margin: 10px;
+  color: rgb(59, 204, 33);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
