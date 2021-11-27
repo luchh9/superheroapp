@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100;1,300&family=Shippori+Antique&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.single-heroe {
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 350px;
+  margin: 120px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+  box-shadow: 30px 30px 40px -20px rgba(0, 0, 0, 0.5);
+}
+.info_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: multiply;
+  z-index: 2;
+  border-radius: 10px;
+}
+.heroe_header {
+  position: relative;
+  padding: 25px;
+  height: 40%;
+}
+h1 {
+  color: black;
+  font-weight: 400;
+}
+h4 {
+  color: #555;
+  font-weight: 400;
+}
+.appearance span {
+  display: inline-block;
+  margin-top: 15px;
+  color: rgb(27, 27, 27);
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.type {
+  display: inline-block;
+  color: #474747;
+  margin-left: 10px;
+}
+.heroe-image {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  height: 120px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+}
+.container-list {
+  padding: 25px;
+  height: 50%;
+  text-align: start;
+}
+
+.movie_social {
+  height: 10%;
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem;
+}
+li {
+  font-family: "Shippori Antique", sans-serif;
+  color: rgba(83, 83, 83, 0.986);
+  transition: color 0.3s;
+  transition-delay: 0.15s;
+  margin: 0 10px;
+}
+
+.blur_back {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  right: 0;
+  background-size: cover;
+  border-radius: 11px;
+}
+.appearance {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .heroe_header {
+    width: 65%;
+  }
+
+  .container-list {
+    width: 50%;
+  }
+
+  .info_section {
+    background: linear-gradient(to right, #e2e4e4ec 50%, transparent 80%);
+  }
+
+  .blur_back {
+    width: 50%;
+    background-position: -100% 10% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .single-heroe {
+    width: 95%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+  }
+
+  .blur_back {
+    width: 100%;
+    background-position: 50% 50% !important;
+  }
+
+  .heroe_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+
+  .container-list {
+    width: 100%;
+  }
+
+  .info_section {
+    background: linear-gradient(to top, #e5e6e6 50%, transparent 100%);
+    display: inline-grid;
+  }
+
+  .apariencia span {
+    font-size: 5px;
+    margin-top: 3px;
+  }
+  .heroe-image {
+    margin-right: 10px;
+  }
+}

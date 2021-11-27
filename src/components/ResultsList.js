@@ -1,30 +1,17 @@
 import React, { useState, useEffect } from "react";
 import HeroeCard from "./HeroeCard";
 import Loading from "./Loading";
-import axios from "axios";
+import { useLocation } from "react-router-dom";
+// import axios from "axios";
 
-const ResultsList = (props) => {
-  const heroe = props.history.location.search.replace("?", "");
+function ResultsList(props) {
+  let location = useLocation();
+  const heroe = location.search.replace("?", "");
+  console.log("LOCATION:", heroe);
   const [heroes, setHeroes] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   const fetchData = async (name) => {
-  //     try {
-  //       const response = await axios(
-  //         "https://www.superheroapi.com/api.php/4506791626076279/search/" + name
-  //       );
-  //       console.log("la respuesta", response);
-  //       setHeroes(response.data);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   fetchData(heroe);
-  //   setLoading(false);
-  // }, []);
-
+  //SIN AXIOS
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -48,20 +35,22 @@ const ResultsList = (props) => {
 
   return (
     <React.Fragment>
-      <div className="container-card">
-        <h1 className="display-4 results-for text-uppercase">
-          {heroes["results-for"]}
-        </h1>
-        <div className="container">
-          <div className="row">
-            {heroes.results?.map((e) => (
-              <HeroeCard name={e.name} img={e.image.url} />
-            ))}
+      <div className="background">
+        <div className="container-card">
+          <h1 className="display-4 results-for text-uppercase">
+            {heroes["results-for"]}
+          </h1>
+          <div className="container">
+            <div className="row">
+              {heroes.results?.map((e) => (
+                <HeroeCard name={e.name} img={e.image.url} id={e.id} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </React.Fragment>
   );
-};
+}
 
 export default ResultsList;

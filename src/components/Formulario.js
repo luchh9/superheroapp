@@ -3,7 +3,7 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./Formulario.css";
 
-const Formulario = () => {
+function Formulario() {
   const [SendForm, setSendForm] = useState(false);
 
   return (
@@ -69,7 +69,7 @@ const Formulario = () => {
     >
       {({ errors }) => (
         <div className="formprincipal">
-          <h1 className="formtitle">Bienvenido a Superhero!</h1>
+          <h1 className="formtitle">BIENVENIDO A SUPERHERO!</h1>
           <Form>
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Email address</label>
@@ -114,6 +114,6 @@ const Formulario = () => {
       )}
     </Formik>
   );
-};
+}
 
 export default Formulario;

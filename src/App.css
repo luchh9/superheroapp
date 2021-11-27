@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&display=swap");
+
 .centrado {
   display: flex;
   justify-content: center;
@@ -12,9 +15,7 @@
 .Link {
   text-decoration: none;
 }
-.container-card {
-  background-color: #d6e8ff;
-}
+/* RESULTS LIST */
 .heroe-card {
   margin: 40px;
   background-color: antiquewhite;
@@ -39,6 +40,7 @@
   padding: 3rem;
   color: #000000;
   text-align: center;
+  font-family: "Fira Sans", sans-serif;
 }
 .card-title {
   color: #000000;
