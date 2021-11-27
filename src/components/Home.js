@@ -1,21 +1,22 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import "./Formulario.css";
+import "./Login.css";
 import { useHistory } from "react-router-dom";
 
 const Home = () => {
   let history = useHistory();
+
   return (
     <Formik
-      // VALORES
+      // VALUES
       initialValues={{
         busqueda: "",
       }}
-      //VALIDACION (validate retorna errors)
+      //VALIDATION (return "errors")
       validate={(valores) => {
         let errores = {};
 
-        //validacion para la password
+        //VALIDATION PASSWORD
         if (!valores.busqueda) {
           errores.busqueda = "Por favor Ingrese un heroe";
         }
@@ -30,7 +31,7 @@ const Home = () => {
         Push();
         //RESETEADO Y MENSAJE DE EXITO
         resetForm();
-        console.log("formulario enviado", valores);
+        console.log("Formulario enviado", valores);
       }}
     >
       {({ errors }) => (

@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import HeroeCard from "./HeroeCard";
 import Loading from "./Loading";
-import { useLocation } from "react-router-dom";
+import NotFound from "./NotFound";
+
 // import axios from "axios";
 
 function ResultsList(props) {
+  //LOCATION
   let location = useLocation();
   const heroe = location.search.replace("?", "");
-  console.log("LOCATION:", heroe);
+  console.log("Location:", heroe);
+
+  //STATE
   const [heroes, setHeroes] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -26,16 +31,16 @@ function ResultsList(props) {
       })
       .finally(() => {
         setLoading(false);
+        console.log("response!", heroes.error);
       });
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <React.Fragment>
-      <div className="background">
+      {loading && <Loading />}
+      {heroes.error && <NotFound msg={heroes.error} />}
+
+      <div>
         <div className="container-card">
           <h1 className="display-4 results-for text-uppercase">
             {heroes["results-for"]}

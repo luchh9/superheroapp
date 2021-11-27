@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+  font-weight: 400;
+  font-family: "Fira Sans", sans-serif;
+}
+
+h4 {
+  color: #555;
+  font-weight: 400;
+}
 
 .centrado {
   display: flex;
@@ -15,7 +30,7 @@
 .Link {
   text-decoration: none;
 }
-/* RESULTS LIST */
+/* HEROE CARD */
 .heroe-card {
   margin: 40px;
   background-color: antiquewhite;
@@ -29,19 +44,21 @@
   transform: translateY(-30px);
   transition: 0.5s;
 }
+
 .heroe-card-img {
   height: 250px;
   width: 100%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+.card-title {
+  color: #000000;
+}
+/* RESULTSLIST */
 
 .results-for {
   padding: 3rem;
   color: #000000;
   text-align: center;
   font-family: "Fira Sans", sans-serif;
-}
-.card-title {
-  color: #000000;
 }

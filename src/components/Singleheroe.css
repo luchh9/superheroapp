@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100;1,300&family=Shippori+Antique&display=swap");
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 .single-heroe {
   position: relative;
   display: block;
@@ -13,6 +8,7 @@
   margin: 120px auto;
   overflow: hidden;
   border-radius: 10px;
+  border: solid 0.5px rgba(0, 0, 0, 0.371);
   transition: all 0.4s;
   box-shadow: 30px 30px 40px -20px rgba(0, 0, 0, 0.5);
 }
@@ -29,14 +25,7 @@
   padding: 25px;
   height: 40%;
 }
-h1 {
-  color: black;
-  font-weight: 400;
-}
-h4 {
-  color: #555;
-  font-weight: 400;
-}
+
 .appearance span {
   display: inline-block;
   margin-top: 15px;

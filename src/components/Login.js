@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import "./Formulario.css";
+import "./Login.css";
 
-function Formulario() {
+function Login() {
   const [SendForm, setSendForm] = useState(false);
 
   return (
@@ -106,7 +106,6 @@ function Formulario() {
               Login
             </button>
           </Form>
-          {/* REALIZAR REDIRECCION CON TOKEN */}
           {SendForm && (
             <p className="exito">El formulario se envio con exito!</p>
           )}
@@ -116,4 +115,4 @@ function Formulario() {
   );
 }
 
-export default Formulario;
+export default Login;
