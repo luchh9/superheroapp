@@ -4,11 +4,10 @@ import Loading from "./Loading";
 import "./Singleheroe.css";
 import { useParams } from "react-router-dom";
 
-function SingleHeroePage(props) {
+function SingleHeroePage() {
   //PARAMS
   let params = useParams();
   let heroeid = params.id;
-  console.log("Params", params.id);
 
   //STATE
   const [infoheroe, setInfoheroe] = useState([]);

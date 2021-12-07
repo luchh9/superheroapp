@@ -8,9 +8,10 @@ import ResultsList from "./components/ResultsList";
 import SingleHeroePage from "./components/SingleHeroePage";
 import PrivateRoute from "./routers/PrivateRoute";
 import Layout from "./components/Layout";
+import TeamHeroePage from "./components/TeamHeroePage";
 
 const App = () => {
-  const user = sessionStorage.getItem("token");
+  const user = localStorage.getItem("token");
   return (
     <BrowserRouter>
       <Switch>
@@ -24,6 +25,7 @@ const App = () => {
           <PrivateRoute exact path="/Home" component={Home} />
           <PrivateRoute exact path="/Result" component={ResultsList} />
           <PrivateRoute path="/Heroe/id/:id" component={SingleHeroePage} />
+          <PrivateRoute exact path="/Team" component={TeamHeroePage} />
         </Layout>
       </Switch>
     </BrowserRouter>

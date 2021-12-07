@@ -30,6 +30,7 @@ h4 {
 .Link {
   text-decoration: none;
 }
+
 /* HEROE CARD */
 .heroe-card {
   margin: 40px;
@@ -54,6 +55,7 @@ h4 {
 .card-title {
   color: #000000;
 }
+
 /* RESULTSLIST */
 
 .results-for {
@@ -61,4 +63,10 @@ h4 {
   color: #000000;
   text-align: center;
   font-family: "Fira Sans", sans-serif;
+}
+
+/* Navbar */
+
+.btn {
+  margin: 2px;
 }

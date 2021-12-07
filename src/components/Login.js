@@ -51,7 +51,9 @@ function Login() {
             console.log("axio post:", token);
             //GUARDADO EN LOCALSTORAGE
             if (token) {
-              sessionStorage.setItem("token", token);
+              const arrayHeroes = [];
+              localStorage.setItem("heroes", JSON.stringify(arrayHeroes));
+              localStorage.setItem("token", token);
               window.location.reload(false);
             }
           } catch (err) {

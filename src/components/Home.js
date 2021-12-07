@@ -31,7 +31,6 @@ const Home = () => {
         Push();
         //RESETEADO Y MENSAJE DE EXITO
         resetForm();
-        console.log("Formulario enviado", valores);
       }}
     >
       {({ errors }) => (

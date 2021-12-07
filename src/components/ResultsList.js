@@ -6,11 +6,10 @@ import NotFound from "./NotFound";
 
 // import axios from "axios";
 
-function ResultsList(props) {
+function ResultsList() {
   //LOCATION
   let location = useLocation();
   const heroe = location.search.replace("?", "");
-  console.log("Location:", heroe);
 
   //STATE
   const [heroes, setHeroes] = useState([]);
@@ -31,7 +30,6 @@ function ResultsList(props) {
       })
       .finally(() => {
         setLoading(false);
-        console.log("response!", heroes.error);
       });
   }, []);
 
@@ -48,7 +46,13 @@ function ResultsList(props) {
           <div className="container">
             <div className="row">
               {heroes.results?.map((e) => (
-                <HeroeCard name={e.name} img={e.image.url} id={e.id} />
+                <HeroeCard
+                  name={e.name}
+                  img={e.image.url}
+                  id={e.id}
+                  powerstats={e.powerstats}
+                  key={e.id}
+                />
               ))}
             </div>
           </div>

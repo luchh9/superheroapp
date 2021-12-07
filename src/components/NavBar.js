@@ -1,18 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const Logout = () => {
-    const user = sessionStorage.getItem("token");
-    sessionStorage.removeItem("token");
+    //ELIMINO LOS DATOS GUARDADOS
+    localStorage.removeItem("token");
+    localStorage.removeItem("heroes");
+    //REDIRECCION AL LOGIN POR DEFECTO
     window.location.reload(false);
-
-    console.log("TOKEN eliminado?", user);
   };
   return (
     <React.Fragment>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <button onClick={Logout} class="btn btn-dark">
+      <ul className="nav d-flex justify-content-between">
+        <Link to="/Home">
+          <li className="nav-item">
+            <button type="button" className="btn btn-light">
+              Home
+            </button>
+          </li>
+        </Link>
+
+        <Link to="/Team">
+          <li className="nav-item">
+            <button type="button" className="btn btn-light">
+              Team
+            </button>
+          </li>
+        </Link>
+        <li className="nav-item">
+          <button onClick={Logout} className="btn btn-dark">
             Cerrar Sesion
           </button>
         </li>
