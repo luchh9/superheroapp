@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 //Pongo en uso un Custom Hook para guardar en LocalStorage
@@ -6,21 +6,38 @@ import useLocalStorage from "../hooks/useLocalStorage";
 
 function HeroeCard(props) {
   const [team, setTeam] = useLocalStorage("heroes", "");
+  const [error, setError] = useState();
 
   function saveHeroe(idheroe, nameheroe, imgheroe, powerstats) {
     let teamHeroes = localStorage.getItem("heroes");
     let arrayHeroes = JSON.parse(teamHeroes);
 
-    let heroeObj = {
-      id: idheroe,
-      name: nameheroe,
-      image: imgheroe,
-      powerstats: powerstats,
-      stored: true,
+    //fix
+    //Retorna true o false, si existe el id en el array
+    let exist = (array, id) => {
+      let existe = array.some((e) => e.id === id);
+      return existe;
     };
+    let duplicate = exist(arrayHeroes, idheroe);
 
-    arrayHeroes.push(heroeObj);
-    setTeam(arrayHeroes);
+    //Manejo el estado de "error"
+    if (arrayHeroes.length > 5) {
+      setError("El team esta completo!");
+      setTimeout(() => setError(), 2000);
+    } else if (duplicate) {
+      setError("El heroe ya esta en el equipo!");
+      setTimeout(() => setError(), 2000);
+    } else {
+      let heroeObj = {
+        id: idheroe,
+        name: nameheroe,
+        image: imgheroe,
+        powerstats: powerstats,
+        stored: true,
+      };
+      arrayHeroes.push(heroeObj);
+      setTeam(arrayHeroes);
+    }
   }
 
   return (
@@ -51,6 +68,7 @@ function HeroeCard(props) {
                 Eliminar
               </button>
             ) : null}
+            <h5 className="error">{error}</h5>
           </div>
         </div>
       </div>
