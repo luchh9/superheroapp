@@ -13,22 +13,41 @@ function SingleHeroePage() {
   const [infoheroe, setInfoheroe] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  //WITH AXIOS
+  // useEffect(() => {
+  //   //
+  //   setLoading(true);
+  //   //FETCH
+  //   const fetchData = async (id) => {
+  //     try {
+  //       const response = await axios(
+  //         "https://www.superheroapi.com/api.php/4506791626076279/" + id
+  //       );
+  //       console.log("Response:", response.data);
+  //       setInfoheroe(response.data);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
+  //   //
+  //   fetchData(heroeid);
+  //   setLoading(false);
+  // }, []);
+
+  //WITHOUT AXIOS
   useEffect(() => {
-    //FETCH
     setLoading(true);
-    const fetchData = async (id) => {
-      try {
-        const response = await axios(
-          "https://www.superheroapi.com/api.php/4506791626076279/" + id
-        );
-        console.log("Response:", response.data);
-        setInfoheroe(response.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchData(heroeid);
-    setLoading(false);
+    fetch("https://www.superheroapi.com/api.php/4506791626076279/" + heroeid)
+      .then((res) => res.json())
+      .then((data) => {
+        setInfoheroe(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (

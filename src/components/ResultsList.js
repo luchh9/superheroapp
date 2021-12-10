@@ -41,7 +41,7 @@ function ResultsList() {
       <div>
         <div className="container-card">
           <h1 className="display-4 results-for text-uppercase">
-            {heroes["results-for"]}
+            Resultado de: <span>{heroes["results-for"]}</span>
           </h1>
           <div className="container">
             <div className="row">

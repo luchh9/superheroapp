@@ -32,3 +32,7 @@ label {
     font-size: 2rem;
   }
 }
+.form-login {
+  background-color: rgba(145, 176, 255, 0.576);
+  width: 40%;
+}

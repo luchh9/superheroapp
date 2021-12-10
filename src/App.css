@@ -5,6 +5,9 @@
   margin: 0;
 }
 
+p {
+  color: rgb(116, 116, 116);
+}
 h1 {
   color: black;
   font-weight: 400;
@@ -14,6 +17,10 @@ h1 {
 h4 {
   color: #555;
   font-weight: 400;
+}
+
+span {
+  color: rgb(132, 175, 255);
 }
 
 .centrado {
@@ -40,10 +47,8 @@ h4 {
   text-align: center;
   width: 80%;
 }
-
-.heroe-card:hover {
-  transform: translateY(-30px);
-  transition: 0.5s;
+.container-img {
+  overflow: hidden;
 }
 
 .heroe-card-img {
@@ -51,7 +56,12 @@ h4 {
   width: 100%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  transition: transform 0.5s ease;
 }
+.heroe-card-img:hover {
+  transform: scale(1.3);
+}
+
 .card-title {
   color: #000000;
 }
@@ -69,4 +79,21 @@ h4 {
 
 .btn {
   margin: 2px;
+}
+
+/* Team */
+
+.team-title {
+  height: 40%;
+  margin-top: 20px;
+}
+
+.team-stats {
+  height: 30%;
+  background: rgba(174, 194, 242, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

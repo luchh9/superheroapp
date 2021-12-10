@@ -5,6 +5,7 @@ import "./Login.css";
 
 function Login() {
   const [SendForm, setSendForm] = useState(false);
+  const [TokenMsg, setTokenMsg] = useState(false);
 
   return (
     <Formik
@@ -57,6 +58,8 @@ function Login() {
               window.location.reload(false);
             }
           } catch (err) {
+            setTokenMsg(true);
+            setTimeout(() => setTokenMsg(false), 3500);
             console.log(err);
           }
         };
@@ -71,14 +74,16 @@ function Login() {
     >
       {({ errors }) => (
         <div className="formprincipal">
-          <h1 className="formtitle">BIENVENIDO A SUPERHERO!</h1>
+          <h1 className="formtitle">
+            BIENVENIDO A <span>SUPERHERO!</span>
+          </h1>
           <Form>
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Email address</label>
               <Field
                 name="email"
                 type="email"
-                className="form-control"
+                className="form-control form-login"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
@@ -92,7 +97,7 @@ function Login() {
                 <Field
                   name="password"
                   type="password"
-                  className="form-control"
+                  className="form-control form-login"
                   id="exampleInputPassword1"
                   placeholder="Password"
                 />
@@ -111,6 +116,7 @@ function Login() {
           {SendForm && (
             <p className="exito">El formulario se envio con exito!</p>
           )}
+          {TokenMsg && <p className="error">No fue autorizado!</p>}
         </div>
       )}
     </Formik>

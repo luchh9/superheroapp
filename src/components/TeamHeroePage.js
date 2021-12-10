@@ -24,9 +24,21 @@ const TeamHeroePage = () => {
 
   return (
     <React.Fragment>
-      <div className="container centrado">
+      <div className="container centrado team-title">
         <div className="centrar">
           <h1>TEAM</h1>
+          <p>
+            El team tiene un maximo de 6 integrantes y no se puede agregar al
+            mismo heroe!
+          </p>
+          <div className="team-stats">
+            <li>
+              strength:
+              {heroeteam.map((heroe) => (
+                <li>{heroe.powerstats.strength}</li>
+              ))}
+            </li>
+          </div>
         </div>
       </div>
       <div className="container">

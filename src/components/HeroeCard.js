@@ -45,7 +45,9 @@ function HeroeCard(props) {
       <div className="col-12 col-md-3 ">
         <div className="heroe-card">
           <Link className="Link" to={`/Heroe/id/${props.id}`}>
-            <img className="heroe-card-img" src={props.img} alt="Heroe" />
+            <div className="container-img">
+              <img className="heroe-card-img" src={props.img} alt="Heroe" />
+            </div>
           </Link>
           <div className="card-body">
             <h5 className="card-title">{props.name}</h5>
