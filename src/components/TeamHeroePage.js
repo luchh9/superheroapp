@@ -6,6 +6,30 @@ const TeamHeroePage = () => {
 
   const [heroeteam, setHeroeTeam] = useState(arrayheroes);
 
+  //devuelve la suma de la fuerza de todos los heroes
+  const sumStrength = (array) => {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+      let strength = array[i].powerstats.strength;
+      let numstrength = parseInt(strength, 10);
+      total += numstrength;
+    }
+    return total;
+  };
+
+  const sumSpeed = (array) => {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+      let strength = array[i].powerstats.speed;
+      let numspeed = parseInt(strength, 10);
+      total += numspeed;
+    }
+    return total;
+  };
+
+  const totalSpeed = sumSpeed(heroeteam);
+  const totalStrength = sumStrength(heroeteam);
+
   const deleteHeroe = (idheroe) => {
     //Obtengo el array de LocalStorage
     let arrayHeroes = JSON.parse(localStorage.getItem("heroes"));
@@ -31,30 +55,42 @@ const TeamHeroePage = () => {
             El team tiene un maximo de 6 integrantes y no se puede agregar al
             mismo heroe!
           </p>
-          <div className="team-stats">
-            <li>
-              strength:
-              {heroeteam.map((heroe) => (
-                <li>{heroe.powerstats.strength}</li>
-              ))}
+        </div>
+      </div>
+      {heroeteam.length === 0 ? null : (
+        <div>
+          <h3>Team Stats</h3>
+          <ul className="power-list">
+            <li className="powerstat">
+              Fuerza:
+              {totalStrength}
             </li>
+            <li className="powerstat">
+              Velocidad:
+              {isNaN(totalSpeed) ? "unknow" : totalSpeed}
+            </li>
+          </ul>
+        </div>
+      )}
+
+      {heroeteam.length === 0 ? (
+        <h3>Team vacio!</h3>
+      ) : (
+        <div className="container">
+          <div className="row">
+            {heroeteam.map((e) => (
+              <HeroeCard
+                name={e.name}
+                img={e.image}
+                id={e.id}
+                key={e.id}
+                stored={e.stored}
+                delete={deleteHeroe}
+              />
+            ))}
           </div>
         </div>
-      </div>
-      <div className="container">
-        <div className="row">
-          {heroeteam.map((e) => (
-            <HeroeCard
-              name={e.name}
-              img={e.image}
-              id={e.id}
-              key={e.id}
-              stored={e.stored}
-              delete={deleteHeroe}
-            />
-          ))}
-        </div>
-      </div>
+      )}
     </React.Fragment>
   );
 };

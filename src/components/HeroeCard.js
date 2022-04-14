@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-//Pongo en uso un Custom Hook para guardar en LocalStorage
 import useLocalStorage from "../hooks/useLocalStorage";
 
 function HeroeCard(props) {
@@ -12,19 +11,19 @@ function HeroeCard(props) {
     let teamHeroes = localStorage.getItem("heroes");
     let arrayHeroes = JSON.parse(teamHeroes);
 
-    //fix
     //Retorna true o false, si existe el id en el array
     let exist = (array, id) => {
       let existe = array.some((e) => e.id === id);
       return existe;
     };
-    let duplicate = exist(arrayHeroes, idheroe);
+
+    let IsDuplicate = exist(arrayHeroes, idheroe);
 
     //Manejo el estado de "error"
     if (arrayHeroes.length > 5) {
       setError("El team esta completo!");
       setTimeout(() => setError(), 2000);
-    } else if (duplicate) {
+    } else if (IsDuplicate) {
       setError("El heroe ya esta en el equipo!");
       setTimeout(() => setError(), 2000);
     } else {
@@ -42,7 +41,7 @@ function HeroeCard(props) {
 
   return (
     <React.Fragment>
-      <div className="col-12 col-md-3 ">
+      <div className="col-12 col-md-4 ">
         <div className="heroe-card">
           <Link className="Link" to={`/Heroe/id/${props.id}`}>
             <div className="container-img">

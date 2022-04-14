@@ -13,7 +13,9 @@ h1 {
   font-weight: 400;
   font-family: "Fira Sans", sans-serif;
 }
-
+h3{
+  text-align: center;
+}
 h4 {
   color: #555;
   font-weight: 400;
@@ -27,7 +29,6 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
 }
 
 .centrar {
@@ -43,7 +44,7 @@ span {
   margin: 40px;
   background-color: antiquewhite;
   border-radius: 15px;
-  box-shadow: rgb(0, 0, 0) 3px 4px 7px;
+  box-shadow: rgb(0, 0, 0) 3px 4px 30px;
   text-align: center;
   width: 80%;
 }
@@ -82,18 +83,28 @@ span {
 }
 
 /* Team */
-
-.team-title {
-  height: 40%;
-  margin-top: 20px;
+.team-title{
+  margin: 80px 0px;
 }
-
 .team-stats {
-  height: 30%;
+  padding: 10px;
   background: rgba(174, 194, 242, 0.75);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);
   -webkit-backdrop-filter: blur(13.5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.power-list{
+  display: flex;
+  justify-content: center;
+}
+
+.powerstat{
+  color: #000000;
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(75, 149, 233);
+  width: 120px;
+  border-radius: 10px;
 }
