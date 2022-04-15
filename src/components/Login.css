@@ -1,6 +1,7 @@
 label {
   margin: 10px;
 }
+
 .formprincipal {
   width: 50%;
   margin: 60px;
@@ -26,13 +27,15 @@ label {
   margin: 10px;
   color: rgb(59, 204, 33);
 }
+
+.form-login {
+  background-color: rgba(145, 176, 255, 0.576);
+  width: 60%;
+}
+
 @media only screen and (max-width: 575px) {
   .formtitle {
     margin-bottom: 40px;
     font-size: 2rem;
   }
-}
-.form-login {
-  background-color: rgba(145, 176, 255, 0.576);
-  width: 40%;
 }

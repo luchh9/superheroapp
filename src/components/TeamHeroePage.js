@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import HeroeCard from "./HeroeCard";
+import strength from "../assets/statics/strength-icon.png";
+import speed from "../assets/statics/speed-icon.png";
 
 const TeamHeroePage = () => {
   let arrayheroes = JSON.parse(localStorage.getItem("heroes"));
@@ -59,14 +61,14 @@ const TeamHeroePage = () => {
       </div>
       {heroeteam.length === 0 ? null : (
         <div>
-          <h3>Team Stats</h3>
+          <h3>Estadisticas</h3>
           <ul className="power-list">
             <li className="powerstat">
-              Fuerza:
+              <img src={strength} alt="fuerza" />
               {totalStrength}
             </li>
             <li className="powerstat">
-              Velocidad:
+              <img src={speed} alt="speed" />
               {isNaN(totalSpeed) ? "unknow" : totalSpeed}
             </li>
           </ul>

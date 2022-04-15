@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Loading from "./Loading";
 import "./Singleheroe.css";
 import { useParams } from "react-router-dom";
@@ -7,37 +6,14 @@ import { useParams } from "react-router-dom";
 function SingleHeroePage() {
   //PARAMS
   let params = useParams();
-  let heroeid = params.id;
+  const heroeid = params.id;
 
   //STATE
   const [infoheroe, setInfoheroe] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  //WITH AXIOS
-  // useEffect(() => {
-  //   //
-  //   setLoading(true);
-  //   //FETCH
-  //   const fetchData = async (id) => {
-  //     try {
-  //       const response = await axios(
-  //         "https://www.superheroapi.com/api.php/4506791626076279/" + id
-  //       );
-  //       console.log("Response:", response.data);
-  //       setInfoheroe(response.data);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   //
-  //   fetchData(heroeid);
-  //   setLoading(false);
-  // }, []);
-
-  //WITHOUT AXIOS
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://www.superheroapi.com/api.php/4506791626076279/" + heroeid)
+  function fetchData(id) {
+    fetch("https://www.superheroapi.com/api.php/4506791626076279/" + id)
       .then((res) => res.json())
       .then((data) => {
         setInfoheroe(data);
@@ -48,7 +24,13 @@ function SingleHeroePage() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }
+
+  //WITHOUT AXIOS
+  useEffect(() => {
+    setLoading(true);
+    fetchData(heroeid);
+  }, [heroeid]);
 
   return (
     <React.Fragment>

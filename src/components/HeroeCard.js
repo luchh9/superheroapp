@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
+import addIcon from "../assets/statics/add-icon.png";
+import deleteIcon from "../assets/statics/delete-icon.png";
 
 function HeroeCard(props) {
   const [team, setTeam] = useLocalStorage("heroes", "");
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
+  const [exito, setExito] = useState("");
 
   function saveHeroe(idheroe, nameheroe, imgheroe, powerstats) {
     let teamHeroes = localStorage.getItem("heroes");
@@ -36,6 +39,9 @@ function HeroeCard(props) {
       };
       arrayHeroes.push(heroeObj);
       setTeam(arrayHeroes);
+      //msg exito
+      setExito("Agregado con exito");
+      setTimeout(() => setExito(), 2000);
     }
   }
 
@@ -55,21 +61,19 @@ function HeroeCard(props) {
                 onClick={() =>
                   saveHeroe(props.id, props.name, props.img, props.powerstats)
                 }
-                className="btn btn-dark"
               >
-                Agregar
+                <img src={addIcon} alt="" />
               </button>
             )}
 
             {props.stored ? (
-              <button
-                onClick={() => props.delete(props.id)}
-                className="btn btn-dark"
-              >
-                Eliminar
+              <button onClick={() => props.delete(props.id)}>
+                <img src={deleteIcon} alt="" />
               </button>
             ) : null}
-            <h5 className="error">{error}</h5>
+
+            {error ? <h5 className="error">{error}</h5> : null}
+            {exito ? <h5 className="exito">{exito}</h5> : null}
           </div>
         </div>
       </div>

@@ -15,12 +15,8 @@ function ResultsList() {
   const [heroes, setHeroes] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  //SIN AXIOS
-  useEffect(() => {
-    setLoading(true);
-    fetch(
-      "https://www.superheroapi.com/api.php/4506791626076279/search/" + heroe
-    )
+  function fetchData(id) {
+    fetch("https://www.superheroapi.com/api.php/4506791626076279/search/" + id)
       .then((res) => res.json())
       .then((data) => {
         setHeroes(data);
@@ -31,7 +27,13 @@ function ResultsList() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }
+
+  //SIN AXIOS
+  useEffect(() => {
+    setLoading(true);
+    fetchData(heroe);
+  }, [heroe]);
 
   return (
     <React.Fragment>

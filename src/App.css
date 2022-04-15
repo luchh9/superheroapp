@@ -1,21 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
+button{
+  border: none;
+  background-color: #b0b0b000;
+}
+
 p {
   color: rgb(116, 116, 116);
 }
+
 h1 {
   color: black;
   font-weight: 400;
   font-family: "Fira Sans", sans-serif;
 }
+
 h3{
   text-align: center;
 }
+
 h4 {
   color: #555;
   font-weight: 400;
@@ -48,6 +57,7 @@ span {
   text-align: center;
   width: 80%;
 }
+
 .container-img {
   overflow: hidden;
 }
@@ -59,6 +69,7 @@ span {
   border-top-right-radius: 15px;
   transition: transform 0.5s ease;
 }
+
 .heroe-card-img:hover {
   transform: scale(1.3);
 }
@@ -76,16 +87,11 @@ span {
   font-family: "Fira Sans", sans-serif;
 }
 
-/* Navbar */
-
-.btn {
-  margin: 2px;
-}
-
 /* Team */
 .team-title{
   margin: 80px 0px;
 }
+
 .team-stats {
   padding: 10px;
   background: rgba(174, 194, 242, 0.75);
@@ -104,7 +110,12 @@ span {
   color: #000000;
   padding: 5px;
   text-align: center;
-  background-color: rgb(75, 149, 233);
-  width: 120px;
+  background-color: #84afff;
+  width: auto;
   border-radius: 10px;
+}
+
+.powerstat img {
+  margin-right: 2px;
+  width: 30px;
 }
