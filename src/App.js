@@ -4,11 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import ResultsList from "./components/ResultsList";
+import ResultsList from "./containers/ResultsList";
 import SingleHeroePage from "./components/SingleHeroePage";
 import PrivateRoute from "./routers/PrivateRoute";
 import Layout from "./components/Layout";
-import TeamHeroePage from "./components/TeamHeroePage";
+import TeamHeroePage from "./containers/TeamHeroePage";
 
 const App = () => {
   const user = localStorage.getItem("token");

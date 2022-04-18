@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import HeroeCard from "./HeroeCard";
-import Loading from "./Loading";
-import NotFound from "./NotFound";
+import HeroeCard from "../components/HeroeCard";
+import Loading from "../components/Loading";
+import NotFound from "../components/NotFound";
 
 // import axios from "axios";
 

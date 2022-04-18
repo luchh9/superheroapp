@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HeroeCard from "./HeroeCard";
+import HeroeCard from "../components/HeroeCard";
 import strength from "../assets/statics/strength-icon.png";
 import speed from "../assets/statics/speed-icon.png";
 
