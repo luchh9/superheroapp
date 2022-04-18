@@ -1,0 +1,41 @@
+label {
+    margin: 10px;
+  }
+  
+  .formprincipal {
+    width: 50%;
+    margin: 60px;
+    margin-top: 120px;
+    font-family: "Fira Sans", sans-serif;
+  }
+  
+  .buttonsubmit {
+    margin: 20px;
+  }
+  
+  .formtitle {
+    margin-bottom: 40px;
+    font-size: 4rem;
+  }
+  
+  .error {
+    margin: 10px;
+    color: rgb(199, 23, 23);
+  }
+  
+  .exito {
+    margin: 10px;
+    color: rgb(59, 204, 33);
+  }
+  
+  .form-login {
+    background-color: rgba(145, 176, 255, 0.576);
+    width: 60%;
+  }
+  
+  @media only screen and (max-width: 575px) {
+    .formtitle {
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+  }

@@ -1,0 +1,33 @@
+
+.team-title{
+    margin: 80px 0px;
+  }
+  
+  .team-stats {
+    padding: 10px;
+    background: rgba(174, 194, 242, 0.75);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+  }
+  
+  .power-list{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .powerstat{
+    color: #000000;
+    padding: 5px;
+    text-align: center;
+    background-color: #84afff;
+    width: auto;
+    border-radius: 10px;
+  }
+  
+  .powerstat img {
+    margin-right: 2px;
+    width: 30px;
+  }
+  

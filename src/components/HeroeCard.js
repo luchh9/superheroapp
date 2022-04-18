@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../assets/css/HeroeCard.css";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import addIcon from "../assets/statics/add-icon.png";
@@ -48,27 +48,27 @@ function HeroeCard(props) {
   return (
     <React.Fragment>
       <div className="col-12 col-md-4 ">
-        <div className="heroe-card">
+        <div className="heroe-card-container">
+          <h5 className="card-title">{props.name}</h5>
           <Link className="Link" to={`/Heroe/id/${props.id}`}>
             <div className="container-img">
               <img className="heroe-card-img" src={props.img} alt="Heroe" />
             </div>
           </Link>
           <div className="card-body">
-            <h5 className="card-title">{props.name}</h5>
             {props.stored ? null : (
               <button
                 onClick={() =>
                   saveHeroe(props.id, props.name, props.img, props.powerstats)
                 }
               >
-                <img src={addIcon} alt="" />
+                <img className="icon" src={addIcon} alt="" />
               </button>
             )}
 
             {props.stored ? (
               <button onClick={() => props.delete(props.id)}>
-                <img src={deleteIcon} alt="" />
+                <img className="icon" src={deleteIcon} alt="" />
               </button>
             ) : null}
 

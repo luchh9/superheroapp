@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import "./Login.css";
 
 function Login() {
   const [SendForm, setSendForm] = useState(false);

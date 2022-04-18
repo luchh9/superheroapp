@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
-import "./Singleheroe.css";
+import "../assets/css/Singleheroe.css";
 import { useParams } from "react-router-dom";
 
 function SingleHeroePage() {
