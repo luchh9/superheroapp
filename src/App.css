@@ -52,8 +52,6 @@ span {
   width: 30px;
 }
 
-/* HEROE CARD */
-
 /* RESULTSLIST */
 
 .results-for {
@@ -63,7 +61,7 @@ span {
   font-family: "Fira Sans", sans-serif;
 }
 
-/* TEAM HEROE PAGE32 */
+/* TEAM-HEROE PAGE */
 .team-title{
   margin: 80px 0px;
 }
@@ -94,4 +92,14 @@ span {
 .powerstat img {
   margin-right: 2px;
   width: 30px;
+}
+
+/* NOT FOUND */
+
+.not-found{
+  margin-top: 200px;
+}
+
+.not-found button {
+  margin-top: 50px;
 }

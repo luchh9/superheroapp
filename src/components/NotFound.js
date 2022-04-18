@@ -9,7 +9,7 @@ function NotFound(props) {
   };
 
   return (
-    <div className="centrado">
+    <div className="centrado not-found">
       <div className="centrar">
         <h1 className="text-uppercase">{props.msg}</h1>
         <button className="btn btn-dark " onClick={BackHistory}>

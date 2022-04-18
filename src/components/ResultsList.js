@@ -35,10 +35,15 @@ function ResultsList() {
     fetchData(heroe);
   }, [heroe]);
 
+  // {heroes.error && <NotFound msg={heroes.error} />}
+
+  if (heroes.error) {
+    return <NotFound msg={heroes.error} />;
+  }
+
   return (
     <React.Fragment>
       {loading && <Loading />}
-      {heroes.error && <NotFound msg={heroes.error} />}
 
       <div>
         <div className="container-card">
